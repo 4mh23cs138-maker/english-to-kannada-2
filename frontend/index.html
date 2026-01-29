@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English to Kannada Translator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌍 English to Kannada Translator</h1>
+            <p>Translate text and listen to pronunciation</p>
+        </div>
+
+        <div class="main-content">
+            <!-- Text Translation Section -->
+            <div class="translation-section">
+                <div class="input-group">
+                    <label for="englishInput">English Text:</label>
+                    <textarea 
+                        id="englishInput" 
+                        placeholder="Enter English text here..."
+                        rows="4"
+                    ></textarea>
+                </div>
+
+                <div class="button-group">
+                    <button id="translateBtn" class="btn btn-primary">
+                        🔄 Translate
+                    </button>
+                    <button id="clearBtn" class="btn btn-secondary">
+                        🗑️ Clear
+                    </button>
+                </div>
+
+                <div class="input-group">
+                    <label for="kannadaOutput">Kannada Translation:</label>
+                    <textarea 
+                        id="kannadaOutput" 
+                        placeholder="Translation will appear here..."
+                        rows="4"
+                        readonly
+                    ></textarea>
+                </div>
+
+                <div class="button-group">
+                    <button id="copyBtn" class="btn btn-secondary">
+                        📋 Copy
+                    </button>
+                    <button id="speakBtn" class="btn btn-secondary">
+                        🔊 Speak
+                    </button>
+                </div>
+            </div>
+
+            <!-- Speech Input Section -->
+            <div class="speech-section">
+                <h2>Speech Recognition</h2>
+                <div class="speech-controls">
+                    <button id="startListenBtn" class="btn btn-primary">
+                        🎤 Start Listening
+                    </button>
+                    <button id="stopListenBtn" class="btn btn-danger" disabled>
+                        ⏹️ Stop Listening
+                    </button>
+                </div>
+                <div id="speechStatus" class="status-message"></div>
+            </div>
+
+            <!-- Loading Indicator -->
+            <div id="loadingIndicator" class="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Processing...</p>
+            </div>
+
+            <!-- Error/Success Messages -->
+            <div id="messageContainer"></div>
+        </div>
+
+        <div class="footer">
+            <p>💡 Tip: Ensure your microphone is connected for speech recognition</p>
+            <p>Built with ❤️ - English to Kannada Translator</p>
+        </div>
+    </div>
+
+    <audio id="audioPlayer"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
